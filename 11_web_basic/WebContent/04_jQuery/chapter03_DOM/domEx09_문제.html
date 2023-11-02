@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습예제</title>
+<script src = "../js/jquery-3.6.1.min.js"></script>
+<script>
+		
+	$().ready(function(){
+		
+		$("#grade").change(function(){
+			var answer = $("#grade").val();  // 셀렉터의 값을 가져온다.
+			
+			$("#choiceGrade").val(answer);  // 셀렉터의 값을 answer에 있는 값으로 수정한다.
+			$("#choiceGrade").prop("disabled", true)  // 값 수정 못하도록
+			$("#choiceGradeLabel").text("선택된 학년");  // 셀렉터의 텍스트를 입력한 텍스트로 수정한다.
+		});
+	});
+		
+		
+</script>
+
+</head>
+<body>
+	
+	<!-- 
+		
+		셀렉트 태그에서 학년을 선택하면
+		
+		1) choiceGradeLabel의 텍스트를 '선택된 학년'으로 변경하고
+		2) choiceGrade의 값을 셀렉트 박스에서 선택한 값이 보이도록 변경하고
+		3) choiceGrade의 값을 수정할 수 없도록 
+		
+		스크립트를 작성해보시오.
+		
+	 -->
+
+    <p>
+        학년 : 
+        <select id="grade">
+            <option value="1학년">1학년</option>
+            <option value="2학년">2학년</option>
+            <option value="3학년">3학년</option>
+        </select>
+    </p>
+    <p>
+        <span id="choiceGradeLabel">결과 </span> : <input type="text" id="choiceGrade">
+    </p>
+
+ 
+</body>
+</html>

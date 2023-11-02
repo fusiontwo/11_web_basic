@@ -23,32 +23,41 @@
 		
 		
 		$("#button1").click(function(){
-			
-		//	document.getElementById("imageTarget").src
-			$("#imageTarget").prop("src");
-			
+			//document.getElementById("imageTarget").src;
+			alert($("#imageTarget").prop("src"));
 		});
 		
 		
 		$("#button2").click(function(){
-		
-			//	document.getElementById("imageTarget").width;
-			$("#imageTarget").prop("width");
-		
+			//document.getElementById("imageTarget").width;
+			alert($("#imageTarget").prop("width"));
 		});
 		
-		
+		var idx = 1;
 		$("#button3").click(function(){
-			//	document.getElementById("imageTarget").src = "이미지"
-			$("#imageTarget").prop("src", "이미지");
+			
+			//document.getElementById("imageTarget").src = "이미지";
+			
+			idx++;
+			
+			$("#imageTarget").prop("src" , "../images/pic_" + idx + ".jpg");
+			
+			if (idx == 9) idx = 0;
+			
 		});
 		
 		
 		$("#button4").click(function(){
-		
-			//	document.getElementById("imageTarget").width = 500;
-			$("#imageTarget").prop("width" , 500);
+			//document.getElementById("imageTarget").width = 500;
 			
+			var width = $("#imageTarget").prop("width");
+			var height = $("#imageTarget").prop("height");
+			
+			width += 30;
+			height += 30;
+			
+			$("#imageTarget").prop("width", width);
+			$("#imageTarget").prop("height", height);
 		});
 		
 	});
